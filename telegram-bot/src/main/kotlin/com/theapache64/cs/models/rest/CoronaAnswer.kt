@@ -3,9 +3,16 @@ package com.theapache64.cs.models.rest
 import com.google.gson.annotations.SerializedName
 
 
-data class CoronaAnswer(
+class CoronaAnswer(
+    @SerializedName("results")
+    val results: List<Result>
+)
+
+data class Result(
     @SerializedName("answers")
     val answers: List<Answer>,
+    @SerializedName("model_id")
+    val modelId: Int,
     @SerializedName("question")
     val question: String // How does corona spread?
 ) {
@@ -37,7 +44,7 @@ data class CoronaAnswer(
             @SerializedName("country")
             val country: String,
             @SerializedName("document_id")
-            val documentId: String, // 131
+            val documentId: Long, // 131
             @SerializedName("document_name")
             val documentName: String, // Q&A on coronaviruses (COVID-19)
             @SerializedName("lang")
