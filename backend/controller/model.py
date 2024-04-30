@@ -203,7 +203,6 @@ def ask(request: Query):
 
 @router.post("/models/{model_id}/faq-qa", response_model=Response, response_model_exclude_unset=True)
 def ask_faq(model_id: int, request: Query):
-
     finder = FINDERS.get(model_id, None)
     if not finder:
         raise HTTPException(
