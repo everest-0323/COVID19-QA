@@ -46,6 +46,3 @@ if __name__ == "__main__":
 
     # check weather questions_truth is similar to questions_auto,
     # and answers_truth similar to answers_auto
-
-
-
